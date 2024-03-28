@@ -3,13 +3,13 @@
 {
   "name": "Container",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "jelaniwoods/appdev2023-rails-template",
+  "image": "ghcr.io/markpatterson27/codespaces-vnc-image:universal",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000, 4567, 9292],
+  "forwardPorts": [3000, 4567, 9292, 6080],
 
   "portsAttributes": {
     "3000": {
@@ -17,6 +17,10 @@
     },
     "4567": {
       "onAutoForward": "silent"
+    },
+    "6080": {
+      "label": "noVNC Viewer",
+      "onAutoForward": "openBrowser"
     },
     "9292": {
       "onAutoForward": "silent"
